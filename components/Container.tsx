@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Navbar from "./Navbar";
 
 const meta = {
     title: "Thameem Karakkoth - Developer with keen interest in cyber security",
@@ -19,6 +20,7 @@ function Container() {
                 <meta property="og:title" content={meta.title}/>
                 <meta property="og:description" content={meta.description}/>
             </Head>
+            <Navbar/>
         </div>
     )
 }
