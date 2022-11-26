@@ -3,7 +3,8 @@ import Head from "next/head";
 const meta = {
     title: "Thameem Karakkoth - Developer with keen interest in cyber security",
     description: "Backend engineer, Full stack developer, Cyber security enthusiast",
-    keywords: "Thameem Karakkoth,thameemk612"
+    keywords: "Thameem Karakkoth, thameemk612",
+    site_name: "Thameem Karakkoth"
 }
 
 function Container() {
@@ -13,6 +14,10 @@ function Container() {
                 <title>{meta.title}</title>
                 <meta name="description" content={meta.description}/>
                 <meta name="keywords" content={meta.keywords}/>
+
+                <meta property="og:site_name" content={meta.site_name}/>
+                <meta property="og:title" content={meta.title}/>
+                <meta property="og:description" content={meta.description}/>
             </Head>
         </div>
     )
