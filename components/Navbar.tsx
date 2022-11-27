@@ -3,7 +3,7 @@ import NextLink from 'next/link';
 import {useRouter} from "next/router";
 
 
-function NavItem({href, text}) {
+function NavItem({href, text}: { href: any, text: string }) {
     const router = useRouter();
     const isActive = router.asPath === href;
 
