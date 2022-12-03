@@ -8,7 +8,10 @@ const meta = {
     site_name: "Thameem Karakkoth"
 }
 
-function Container() {
+// function NavItem({href, text}: { href: any, text: string }) {
+
+function Container(props: any) {
+    const {children} = props;
     return (
         <div className="bg-gray-50 dark:bg-gray-900">
             <Head>
@@ -21,6 +24,9 @@ function Container() {
                 <meta property="og:description" content={meta.description}/>
             </Head>
             <Navbar/>
+            <main>
+                {children}
+            </main>
         </div>
     )
 }
