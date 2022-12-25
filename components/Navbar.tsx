@@ -37,6 +37,12 @@ function Navbar() {
                     <NavItem href="/" text="blog"/>
                     <NavItem href="/" text="contact"/>
                 </div>
+                <a
+                    href={"/"}
+                    className="w-9 h-9 "
+                >
+                    <img src={"static/logo/github-mark-white.svg"} alt={"GitHub Logo"}/>
+                </a>
             </nav>
         </div>
     )
