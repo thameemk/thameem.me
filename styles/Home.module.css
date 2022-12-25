@@ -16,7 +16,7 @@
     display: flex;
     flex: 1;
     padding: 2rem 0;
-    border-top: 1px solid #eaeaea;
+    border-top: 1px solid #222;
     justify-content: center;
     align-items: center;
 }
@@ -57,7 +57,7 @@
 }
 
 .code {
-    background: #fafafa;
+    background: #111;
     border-radius: 5px;
     padding: 0.75rem;
     font-size: 1.1rem;
@@ -79,7 +79,7 @@
     text-align: left;
     color: inherit;
     text-decoration: none;
-    border: 1px solid #eaeaea;
+    border: 1px solid #222;
     border-radius: 10px;
     transition: color 0.15s ease, border-color 0.15s ease;
     max-width: 300px;
@@ -112,20 +112,5 @@
     .grid {
         width: 100%;
         flex-direction: column;
-    }
-}
-
-@media (prefers-color-scheme: dark) {
-    .card,
-    .footer {
-        border-color: #222;
-    }
-
-    .code {
-        background: #111;
-    }
-
-    .logo img {
-        filter: invert(1);
     }
 }
