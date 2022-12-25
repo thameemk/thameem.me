@@ -98,6 +98,13 @@ function MenuIcon(props: JSX.IntrinsicElements['svg']) {
                 strokeLinecap="round"
                 strokeLinejoin="round"
             />
+            <path
+                d="M2.5 17.5H17.5"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
         </svg>
     );
 }
