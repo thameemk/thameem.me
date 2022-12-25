@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import useDelayedRender from 'use-delayed-render';
 import {useState, useEffect} from 'react';
-import styles from 'styles/mobile-menu.module.css';
+import styles from 'styles/MobileMenu.module.css';
 import NextLink from "next/link";
 
 
