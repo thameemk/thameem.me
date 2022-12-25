@@ -13,7 +13,7 @@ const meta = {
 function Container(props: any) {
     const {children} = props;
     return (
-        <div className="bg-gray-50 dark:bg-gray-900">
+        <div className="bg-black">
             <Head>
                 <title>{meta.title}</title>
                 <meta name="description" content={meta.description}/>
