@@ -1,5 +1,6 @@
 import Container from "../components/Container";
 import React from "react";
+import BlogPostCard from "../components/BlogPostCard";
 
 export default function Home() {
     return (
@@ -18,6 +19,14 @@ export default function Home() {
                         the industry's standard dummy text ever since the 1500s,Lorem Ipsum is simply dummy text of the
                         printing and typesetting industry. Lorem Ipsum has been the
                     </p>
+                </div>
+                <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-6 text-white">
+                    Recent Posts
+                </h3>
+                <div className="flex gap-12 flex-col md:flex-row">
+                    <BlogPostCard/>
+                    <BlogPostCard/>
+                    <BlogPostCard/>
                 </div>
             </div>
         </Container>
