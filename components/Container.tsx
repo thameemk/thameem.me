@@ -24,7 +24,9 @@ function Container(props: any) {
                 <meta property="og:description" content={meta.description}/>
             </Head>
             <Navbar/>
-            <main>
+            <main
+                className={"flex flex-col justify-center px-8"}
+            >
                 {children}
             </main>
         </div>
