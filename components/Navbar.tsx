@@ -41,7 +41,7 @@ function Navbar() {
                     href={"/"}
                     className="w-9 h-9 "
                 >
-                    <img src={"static/logo/github-mark-white.svg"} alt={"GitHub Logo"}/>
+                    <img src={"static/images/logo/github-mark-white.svg"} alt={"GitHub Logo"}/>
                 </a>
             </nav>
         </div>
