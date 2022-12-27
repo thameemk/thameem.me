@@ -1,3 +1,10 @@
+/*
+ * Project : thameem.me
+ * Filename : BlogPostCard.tsx
+ * Author : thameem
+ * Modified time : Tue, 27 Dec 2022 at 9:35 pm India Standard Time
+ */
+
 import Link from 'next/link';
 
 // flex flex-col md:flex-row justify-between h-full bg-gray:900 rounded-2xl p-4
