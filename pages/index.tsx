@@ -8,6 +8,7 @@
 import Container from "../components/Container";
 import React from "react";
 import BlogPostCard from "../components/BlogPostCard";
+import Link from "next/link";
 
 export default function Home() {
     return (
@@ -35,6 +36,28 @@ export default function Home() {
                     <BlogPostCard/>
                     <BlogPostCard/>
                 </div>
+                <Link
+                    href="/"
+                    className="flex items-center mt-8 text-gray-400 leading-7 rounded-lg hover:text-gray-200  transition-all h-6"
+                >
+                    <>
+                        {'Read all blogs'}
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            className="h-6 w-6 ml-1"
+                        >
+                            <path
+                                stroke="currentColor"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M17.5 12h-15m11.667-4l3.333 4-3.333-4zm3.333 4l-3.333 4 3.333-4z"
+                            />
+                        </svg>
+                    </>
+                </Link>
             </div>
         </Container>
     )
