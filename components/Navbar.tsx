@@ -1,8 +1,16 @@
+/*
+ * Project : thameem.me
+ * Filename : Navbar.tsx
+ * Author : thameem
+ * Modified time : Mon, 26 Dec 2022 at 11:24 pm India Standard Time
+ */
+
 import cn from "classnames";
 import NextLink from 'next/link';
 import {useRouter} from "next/router";
 import React from "react";
 import MobileMenu from "./MobileMenu";
+import Image from "next/image";
 
 function NavItem({href, text}: { href: any, text: string }) {
     const router = useRouter();
@@ -41,7 +49,7 @@ function Navbar() {
                     href={"/"}
                     className="w-9 h-9 "
                 >
-                    <img src={"static/images/logo/github-mark-white.svg"} alt={"GitHub Logo"}/>
+                    <Image width={100} height={100} src={"static/images/logo/github-mark-white.svg"} alt={"GitHub Logo"}/>
                 </a>
             </nav>
         </div>
