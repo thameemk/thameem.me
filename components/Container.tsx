@@ -7,6 +7,7 @@
 
 import React from "react";
 import Head from "next/head";
+import Header from "./Header";
 
 const meta = {
     title: "Thameem Karakkoth - Developer with keen interest in cyber security",
@@ -31,7 +32,8 @@ function Container(props: any) {
                 <meta property="og:title" content={meta.title}/>
                 <meta property="og:description" content={meta.description}/>
             </Head>
-            <main>
+            <main className={"mx-auto max-w-3xl py-8 px-8"}>
+                <Header/>
                 {children}
             </main>
         </div>
