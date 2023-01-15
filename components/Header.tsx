@@ -21,17 +21,18 @@ function Header() {
                     </h2>
                     <p className="text-sm text-gray-700 mb-1">
                         ▶ Product Engineer at
-                        <a href="https://www.ust.com/" target="_blank" className="font-semibold">&nbsp;UST</a>
+                        <a rel="noreferrer" href="https://www.ust.com/" target="_blank"
+                           className="font-semibold">&nbsp;UST</a>
                     </p>
                     <p className="text-sm text-gray-700 mb-1">
                         ▶ Connect with me on
-                        <a href="https://www.linkedin.com/in/thameem-karakkoth/" target="_blank"
+                        <a rel="noreferrer" href="https://www.linkedin.com/in/thameem-karakkoth/" target="_blank"
                            className="font-semibold">&nbsp;LinkedIn</a>
                     </p>
 
                     <p className="text-sm text-gray-700 mb-1">
                         ▶ View codes on
-                        <a href="https://github.com/thameemk612/" target="_blank"
+                        <a rel="noreferrer" href="https://github.com/thameemk612/" target="_blank"
                            className="font-semibold">&nbsp;GitHub</a>
                     </p>
                 </div>
