@@ -6,9 +6,14 @@
  */
 
 import React from "react";
+import Container from "../components/Container";
 
 export default function Home() {
     return (
-        <p>welcome</p>
+        <Container>
+            <div>
+                <p>welcome</p>
+            </div>
+        </Container>
     )
 }
