@@ -6,6 +6,8 @@
  */
 
 
+import Image from "next/image";
+
 function Header() {
     return (
         <header className="border-solid border-0 border-b border-gray-300 pb-3 mb-10">
@@ -34,7 +36,7 @@ function Header() {
                     </p>
                 </div>
                 <div className="w-[100px] sm:w-[176px] relative mb-4 sm:mb-0">
-                    <img
+                    <Image
                         src="/static/images/self.png"
                         width="1540" height="1592" alt="Thameem Karakkoth"
                         className="shadow-lg rounded-full border border-gray-300"/>
