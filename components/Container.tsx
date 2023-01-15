@@ -2,11 +2,12 @@
  * Project : thameem.me
  * Filename : Container.tsx
  * Author : thameem
- * Modified time : Mon, 26 Dec 2022 at 10:45 pm India Standard Time
+ * Modified time : Sun, 15 Jan 2023 at 5:08 pm India Standard Time
  */
 
+import React from "react";
 import Head from "next/head";
-import Navbar from "./Navbar";
+import Header from "./Header";
 
 const meta = {
     title: "Thameem Karakkoth - Developer with keen interest in cyber security",
@@ -15,13 +16,14 @@ const meta = {
     site_name: "Thameem Karakkoth"
 }
 
-// function NavItem({href, text}: { href: any, text: string }) {
-
 function Container(props: any) {
     const {children} = props;
     return (
-        <div className="bg-black">
+        <div>
             <Head>
+                <meta charSet="utf-8"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
                 <title>{meta.title}</title>
                 <meta name="description" content={meta.description}/>
                 <meta name="keywords" content={meta.keywords}/>
@@ -30,10 +32,8 @@ function Container(props: any) {
                 <meta property="og:title" content={meta.title}/>
                 <meta property="og:description" content={meta.description}/>
             </Head>
-            <Navbar/>
-            <main
-                className={"flex flex-col justify-center px-8"}
-            >
+            <main className={"mx-auto max-w-3xl py-8 px-8"}>
+                <Header/>
                 {children}
             </main>
         </div>
