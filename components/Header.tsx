@@ -8,6 +8,17 @@
 
 import Image from "next/image";
 
+
+function HeaderItem({text, href, company}: { text: any, href: any, company: any }) {
+    return (
+        <p className="text-sm text-gray-700 mb-1">
+            ▶ {text}
+            <a rel="noreferrer" href={href} target="_blank"
+               className="font-semibold">&nbsp;{company}</a>
+        </p>
+    )
+}
+
 function Header() {
     return (
         <header className="border-solid border-0 border-b border-gray-300 pb-3 mb-10">
@@ -19,22 +30,12 @@ function Header() {
                     <h2 className="text-gray-700 mb-4">
                         Developer with a keen interest in cyber security
                     </h2>
-                    <p className="text-sm text-gray-700 mb-1">
-                        ▶ Product Engineer at
-                        <a rel="noreferrer" href="https://www.ust.com/" target="_blank"
-                           className="font-semibold">&nbsp;UST</a>
-                    </p>
-                    <p className="text-sm text-gray-700 mb-1">
-                        ▶ Connect with me on
-                        <a rel="noreferrer" href="https://www.linkedin.com/in/thameem-karakkoth/" target="_blank"
-                           className="font-semibold">&nbsp;LinkedIn</a>
-                    </p>
 
-                    <p className="text-sm text-gray-700 mb-1">
-                        ▶ View codes on
-                        <a rel="noreferrer" href="https://github.com/thameemk612/" target="_blank"
-                           className="font-semibold">&nbsp;GitHub</a>
-                    </p>
+                    <HeaderItem text={"Product Engineer at"} href={"https://www.ust.com/"} company={"UST"}/>
+                    <HeaderItem text={"Connect with me on"} href={"https://www.linkedin.com/in/thameem-karakkoth/"}
+                                company={"LinkedIn"}/>
+                    <HeaderItem text={"View codes on"} href={"https://github.com/thameemk612/"} company={"GitHub"}/>
+
                 </div>
                 <div className="w-[100px] sm:w-[176px] relative mb-4 sm:mb-0">
                     <Image
