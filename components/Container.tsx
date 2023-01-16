@@ -11,7 +11,7 @@ import Header from "./Header";
 import NavBar from "./NavBar";
 
 const meta = {
-    title: "Thameem Karakkoth - Developer with keen interest in cyber security",
+    title: "Thameem Karakkoth",
     description: "Backend engineer, Full stack developer, Cyber security enthusiast",
     keywords: "Thameem Karakkoth, thameemk612",
     site_name: "Thameem Karakkoth"
