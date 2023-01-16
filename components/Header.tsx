@@ -7,6 +7,7 @@
 
 
 import Image from "next/image";
+import meta from "./Meta";
 
 
 function HeaderItem({text, href, company}: { text: any, href: any, company: any }) {
@@ -32,9 +33,9 @@ function Header() {
                     </h2>
 
                     <HeaderItem text={"Product Engineer at"} href={"https://www.ust.com/"} company={"UST"}/>
-                    <HeaderItem text={"Connect with me on"} href={"https://www.linkedin.com/in/thameem-karakkoth/"}
+                    <HeaderItem text={"Connect with me on"} href={meta.linkedin}
                                 company={"LinkedIn"}/>
-                    <HeaderItem text={"View codes on"} href={"https://github.com/thameemk612/"} company={"GitHub"}/>
+                    <HeaderItem text={"View codes on"} href={meta.github} company={"GitHub"}/>
 
                 </div>
                 <div className="w-[100px] sm:w-[176px] relative mb-4 sm:mb-0">

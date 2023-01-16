@@ -8,11 +8,12 @@
 
 const meta = {
     title: "Thameem Karakkoth",
-    description: "Backend engineer, Full stack developer, Cyber security enthusiast",
+    description: "Backend Engineer, Cyber Security Enthusiast",
     keywords: "Thameem Karakkoth, thameemk612",
     site_name: "Thameem Karakkoth",
-    linkedin: "",
-    github: ""
+    linkedin: "https://www.linkedin.com/in/thameem-karakkoth/",
+    github: "https://github.com/thameemk612/",
+    instagram: "https://instagram.com/thameemk612/"
 }
 
 export default meta
