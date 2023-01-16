@@ -9,18 +9,13 @@ import React from "react";
 import Head from "next/head";
 import Header from "./Header";
 import NavBar from "./NavBar";
-
-const meta = {
-    title: "Thameem Karakkoth - Developer with keen interest in cyber security",
-    description: "Backend engineer, Full stack developer, Cyber security enthusiast",
-    keywords: "Thameem Karakkoth, thameemk612",
-    site_name: "Thameem Karakkoth"
-}
+import Footer from "./Footer";
+import meta from "./Meta";
 
 function Container(props: any) {
     const {children} = props;
     return (
-        <div>
+        <>
             <Head>
                 <meta charSet="utf-8"/>
                 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -33,12 +28,13 @@ function Container(props: any) {
                 <meta property="og:title" content={meta.title}/>
                 <meta property="og:description" content={meta.description}/>
             </Head>
-            <main className={"mx-auto max-w-3xl py-8 px-8"}>
+            <main className={"mx-auto max-w-3xl py-10 px-10"}>
                 <NavBar/>
                 <Header/>
                 {children}
+                <Footer/>
             </main>
-        </div>
+        </>
     )
 }
 

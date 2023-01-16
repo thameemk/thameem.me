@@ -7,6 +7,7 @@
 
 
 import Image from "next/image";
+import meta from "./Meta";
 
 
 function HeaderItem({text, href, company}: { text: any, href: any, company: any }) {
@@ -21,7 +22,7 @@ function HeaderItem({text, href, company}: { text: any, href: any, company: any 
 
 function Header() {
     return (
-        <header className="border-solid border-0 border-b border-gray-300 pb-3 mb-10">
+        <header className="border-solid border-b border-gray-00 pb-3 mb-10">
             <div className="flex flex-col-reverse sm:flex-row items-start pt-10 justify-between">
                 <div className="flex flex-col sm:pr-28">
                     <h1 className="font-black text-4xl md:text-6xl tracking-tight mb-3 text-black">
@@ -32,9 +33,9 @@ function Header() {
                     </h2>
 
                     <HeaderItem text={"Product Engineer at"} href={"https://www.ust.com/"} company={"UST"}/>
-                    <HeaderItem text={"Connect with me on"} href={"https://www.linkedin.com/in/thameem-karakkoth/"}
+                    <HeaderItem text={"Connect with me on"} href={meta.linkedin}
                                 company={"LinkedIn"}/>
-                    <HeaderItem text={"View codes on"} href={"https://github.com/thameemk612/"} company={"GitHub"}/>
+                    <HeaderItem text={"View codes on"} href={meta.github} company={"GitHub"}/>
 
                 </div>
                 <div className="w-[100px] sm:w-[176px] relative mb-4 sm:mb-0">
