@@ -23,7 +23,9 @@ export default function Home() {
                     Apart from working in various modern platforms, I'm passionate about learning cutting-edge
                     technologies in the field of software development, design & architecture, cyber security, etc.
                     <br/><br/>
-                    Continue reading →
+                    <a href="#">
+                        Continue reading <span className="text-blue-800">→</span>
+                    </a>
                 </p>
             </div>
         </Container>
