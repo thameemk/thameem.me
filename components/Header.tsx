@@ -21,7 +21,7 @@ function HeaderItem({text, href, company}: { text: any, href: any, company: any 
 
 function Header() {
     return (
-        <header className="border-solid border-0 border-b border-gray-300 pb-3 mb-10">
+        <header className="border-solid border-b border-gray-00 pb-3 mb-10">
             <div className="flex flex-col-reverse sm:flex-row items-start pt-10 justify-between">
                 <div className="flex flex-col sm:pr-28">
                     <h1 className="font-black text-4xl md:text-6xl tracking-tight mb-3 text-black">
