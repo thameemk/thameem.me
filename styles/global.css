@@ -1,0 +1,10 @@
+/*
+ * Project : thameem.me
+ * Filename : global.css
+ * Author : thameem
+ * Modified time : Mon, 16 Jan 2023 at 9:38 pm India Standard Time
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
