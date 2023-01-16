@@ -20,7 +20,7 @@ const meta = {
 function Container(props: any) {
     const {children} = props;
     return (
-        <div>
+        <>
             <Head>
                 <meta charSet="utf-8"/>
                 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -38,7 +38,7 @@ function Container(props: any) {
                 <Header/>
                 {children}
             </main>
-        </div>
+        </>
     )
 }
 
