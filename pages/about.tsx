@@ -35,7 +35,7 @@ function About() {
                     institutional vision of transforming youngsters into technological entrepreneurs and innovative
                     leaders.
                     <br/><br/>
-                    <a href="/contact">Get in touch 👋</a>
+                    <a href="/contact">Get in touch 👋👋</a>
                 </p>
             </div>
         </Container>
