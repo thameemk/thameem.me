@@ -17,13 +17,23 @@ function About() {
 
                 <p className="text-gray-700 mb-10 text-wrapper">
                     Hi, I'm Thameem, a passionate developer, currently working as a Product Engineer at UST.
-                    <br/>
+                    <br/><br/>
                     I have completed my undergraduate in Electronics and communication engineering from TKM College of
                     Engineering.
-                    <br/>
-                    Apart from working in various modern platforms, I'm passionate about learning cutting-edge
-                    technologies in the field of software engineering, design & architecture, cyber security, etc.
-                    <br/>
+                    <br/><br/>
+                    I love to work on various modern platforms and learn cutting-edge technologies in software
+                    engineering, design & architecture, cyber security, etc.
+                    <br/><br/>
+                    I enjoy contributing to society. During my graduation, I got selected for the Microsoft student
+                    partner program, which helps fellow students to develop their technical and career skills for the
+                    future.
+                    <br/><br/>
+                    I have also volunteered as the webmaster of IEEE, the world's largest professional organisation for
+                    engineers and as the chief executive officer of the innovation and entrepreneurship cell (IEDC).
+                    <br/><br/>
+                    IEDC is working under the guidance of the Kerala Start-Up Mission, which aims to promote the
+                    institutional vision of transforming youngsters into technological entrepreneurs and innovative
+                    leaders.
                 </p>
             </div>
         </Container>

@@ -22,8 +22,8 @@ export default function Home() {
                     I have completed my undergraduate in Electronics and communication engineering from TKM College of
                     Engineering.
                     <br/>
-                    Apart from working in various modern platforms, I'm passionate about learning cutting-edge
-                    technologies in the field of software engineering, design & architecture, cyber security, etc.
+                    I love to work on various modern platforms and learn cutting-edge technologies in software
+                    engineering, design & architecture, cyber security, etc.
                     <br/><br/>
                     <a href="/about">
                         Continue reading <span className="text-blue-800">→</span>
