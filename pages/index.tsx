@@ -8,6 +8,7 @@
 import React from "react";
 import Container from "../components/Container";
 import Header from "../components/Header";
+import Link from "next/link";
 
 export default function Home() {
     return (
@@ -25,9 +26,9 @@ export default function Home() {
                     I love to work on various modern platforms and learn cutting-edge technologies in software
                     engineering, design & architecture, cyber security, etc.
                     <br/><br/>
-                    <a href="/about">
+                    <Link href="/about">
                         Continue reading <span className="text-blue-800">→</span>
-                    </a>
+                    </Link>
                 </p>
             </div>
         </Container>
