@@ -7,10 +7,12 @@
 
 import React from "react";
 import Container from "../components/Container";
+import Header from "../components/Header";
 
 export default function Home() {
     return (
         <Container>
+            <Header/>
             <div className="border-b border-gray-00 mb-10">
                 <h2 className="font-black text-2xl md:text-4xl mb-3">About</h2>
 
@@ -23,7 +25,7 @@ export default function Home() {
                     Apart from working in various modern platforms, I'm passionate about learning cutting-edge
                     technologies in the field of software development, design & architecture, cyber security, etc.
                     <br/><br/>
-                    <a href="#">
+                    <a href="/about">
                         Continue reading <span className="text-blue-800">→</span>
                     </a>
                 </p>
