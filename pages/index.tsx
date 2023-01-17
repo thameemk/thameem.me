@@ -7,10 +7,13 @@
 
 import React from "react";
 import Container from "../components/Container";
+import Header from "../components/Header";
+import Link from "next/link";
 
 export default function Home() {
     return (
         <Container>
+            <Header/>
             <div className="border-b border-gray-00 mb-10">
                 <h2 className="font-black text-2xl md:text-4xl mb-3">About</h2>
 
@@ -20,12 +23,12 @@ export default function Home() {
                     I have completed my undergraduate in Electronics and communication engineering from TKM College of
                     Engineering.
                     <br/>
-                    Apart from working in various modern platforms, I'm passionate about learning cutting-edge
-                    technologies in the field of software development, design & architecture, cyber security, etc.
+                    I love to work on various modern platforms and learn cutting-edge technologies in software
+                    engineering, design & architecture, cyber security, etc.
                     <br/><br/>
-                    <a href="#">
+                    <Link href="/about">
                         Continue reading <span className="text-blue-800">→</span>
-                    </a>
+                    </Link>
                 </p>
             </div>
         </Container>

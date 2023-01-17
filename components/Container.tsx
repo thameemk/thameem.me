@@ -7,7 +7,6 @@
 
 import React from "react";
 import Head from "next/head";
-import Header from "./Header";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
 import meta from "./Meta";
@@ -27,10 +26,12 @@ function Container(props: any) {
                 <meta property="og:site_name" content={meta.site_name}/>
                 <meta property="og:title" content={meta.title}/>
                 <meta property="og:description" content={meta.description}/>
+
+                <link rel="shortcut icon" href="/favicon.png"/>
+
             </Head>
             <main className={"mx-auto max-w-3xl py-10 px-10"}>
                 <NavBar/>
-                <Header/>
                 {children}
                 <Footer/>
             </main>
