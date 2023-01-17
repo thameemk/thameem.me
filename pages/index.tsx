@@ -23,7 +23,7 @@ export default function Home() {
                     Engineering.
                     <br/>
                     Apart from working in various modern platforms, I'm passionate about learning cutting-edge
-                    technologies in the field of software development, design & architecture, cyber security, etc.
+                    technologies in the field of software engineering, design & architecture, cyber security, etc.
                     <br/><br/>
                     <a href="/about">
                         Continue reading <span className="text-blue-800">→</span>
