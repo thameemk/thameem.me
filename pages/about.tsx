@@ -34,6 +34,8 @@ function About() {
                     IEDC is working under the guidance of the Kerala Start-Up Mission, which aims to promote the
                     institutional vision of transforming youngsters into technological entrepreneurs and innovative
                     leaders.
+                    <br/><br/>
+                    <a href="/contact">Get in touch 👋</a>
                 </p>
             </div>
         </Container>
