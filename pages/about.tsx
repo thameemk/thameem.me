@@ -8,6 +8,7 @@
 
 import Container from "../components/Container";
 import React from "react";
+import Link from "next/link";
 
 function About() {
     return (
@@ -35,7 +36,7 @@ function About() {
                     institutional vision of transforming youngsters into technological entrepreneurs and innovative
                     leaders.
                     <br/><br/>
-                    <a href="/contact">Get in touch 👋👋</a>
+                    <Link href="/contact">Get in touch 👋👋</Link>
                 </p>
             </div>
         </Container>
