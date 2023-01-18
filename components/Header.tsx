@@ -7,7 +7,7 @@
 
 
 import Image from "next/image";
-import meta from "./Meta";
+import constants from "./Constants";
 
 
 function HeaderItem({text, href, company}: { text: any, href: any, company: any }) {
@@ -33,9 +33,9 @@ function Header() {
                     </h2>
 
                     <HeaderItem text={"Product Engineer at"} href={"https://www.ust.com/"} company={"UST"}/>
-                    <HeaderItem text={"Connect with me on"} href={meta.linkedin}
+                    <HeaderItem text={"Connect with me on"} href={constants.linkedin}
                                 company={"LinkedIn"}/>
-                    <HeaderItem text={"View codes on"} href={meta.github} company={"GitHub"}/>
+                    <HeaderItem text={"View codes on"} href={constants.github} company={"GitHub"}/>
 
                 </div>
                 <div className="w-[100px] sm:w-[176px] relative mb-4 sm:mb-0">
