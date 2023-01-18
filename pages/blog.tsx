@@ -7,16 +7,15 @@
 
 
 import Container from "../components/Container";
+import ComingSoon from "../components/ComingSoon";
 
 function Blog() {
     return (
-       <Container title={"Blog - Thameem Karakkoth"}>
+        <Container title={"Blog - Thameem Karakkoth"}>
 
-           <div className={"margin-c text-center font-black"}>
-                Coming Soon...😇
-           </div>
+            <ComingSoon/>
 
-       </Container>
+        </Container>
     )
 }
 
