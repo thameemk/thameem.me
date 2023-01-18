@@ -12,7 +12,7 @@ import Link from "next/link";
 
 function About() {
     return (
-        <Container>
+        <Container title={"About - Thameem Karakkoth"}>
             <div className="border-b border-gray-00 mb-10 mt-10">
                 <h2 className="font-black text-2xl md:text-4xl mb-3">About</h2>
 

@@ -12,7 +12,14 @@ import Footer from "./Footer";
 import meta from "./Meta";
 
 function Container(props: any) {
-    const {children} = props;
+    const {children, ...customMeta} = props;
+    const meta = {
+        title: "Thameem Karakkoth",
+        description: "Backend Engineer, Cyber Security Enthusiast",
+        keywords: "Thameem Karakkoth, thameemk612",
+        site_name: "Thameem Karakkoth",
+        ...customMeta
+    }
     return (
         <>
             <Head>
