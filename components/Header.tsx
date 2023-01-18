@@ -7,13 +7,13 @@
 
 
 import Image from "next/image";
-import meta from "./Meta";
+import constants from "./Constants";
 
 
 function HeaderItem({text, href, company}: { text: any, href: any, company: any }) {
     return (
-        <p className="text-sm text-gray-700 mb-1">
-            ▶ {text}
+        <p className="text-base text-gray-700 mb-2">
+            👉 {text}
             <a rel="noreferrer" href={href} target="_blank"
                className="font-semibold">&nbsp;{company}</a>
         </p>
@@ -29,13 +29,13 @@ function Header() {
                         Thameem K&nbsp;&nbsp;&nbsp;
                     </h1>
                     <h2 className="text-gray-700 mb-4">
-                        Developer with a keen interest in cyber security
+                        developer with a keen interest in cyber security
                     </h2>
 
                     <HeaderItem text={"Product Engineer at"} href={"https://www.ust.com/"} company={"UST"}/>
-                    <HeaderItem text={"Connect with me on"} href={meta.linkedin}
+                    <HeaderItem text={"Connect with me on"} href={constants.linkedin}
                                 company={"LinkedIn"}/>
-                    <HeaderItem text={"View codes on"} href={meta.github} company={"GitHub"}/>
+                    <HeaderItem text={"View codes on"} href={constants.github} company={"GitHub"}/>
 
                 </div>
                 <div className="w-[100px] sm:w-[176px] relative mb-4 sm:mb-0">

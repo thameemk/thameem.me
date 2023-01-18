@@ -21,7 +21,7 @@ function NavItem({href, text}: { href: any, text: any }) {
                 isActive
                     ? 'font-semibold'
                     : 'font-normal',
-                'p-1'
+                'mr-3'
             )}
         >
             <span>{text}</span>
