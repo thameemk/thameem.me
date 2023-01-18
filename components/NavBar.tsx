@@ -9,6 +9,8 @@ import {useRouter} from "next/router";
 import React from "react";
 import NextLink from "next/link";
 import cn from 'classnames';
+import Image from "next/image";
+import constants from "./Constants";
 
 function NavItem({href, text}: { href: any, text: any }) {
     const router = useRouter();
@@ -32,12 +34,29 @@ function NavItem({href, text}: { href: any, text: any }) {
 
 function NavBar() {
     return (
-        <div>
-            <NavItem href="/" text="Home"/>
-            <NavItem href="/about" text="About"/>
-            <NavItem href="/blog" text="Blog"/>
-            <NavItem href="/contact" text="Contact"/>
-        </div>
+        <>
+            <nav className="flex items-center justify-between">
+
+                <div className="float-left">
+
+                    <NavItem href="/" text="Home"/>
+                    <NavItem href="/about" text="About"/>
+                    <NavItem href="/blog" text="Blog"/>
+                    <NavItem href="/contact" text="Contact"/>
+                </div>
+
+                <a
+                    href={constants.github}
+                    rel="noreferrer"
+                    target="_blank"
+                    className="w-9 h-9 rounded-lg hover:ring-2 ring-gray-300 float-right"
+                >
+                    <Image width="100" height="100" src="static/images/logo/github-mark.svg" alt="GitHub Logo"/>
+
+                </a>
+            </nav>
+
+        </>
     )
 }
 
