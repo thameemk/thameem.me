@@ -23,7 +23,7 @@ function NavItem({href, text}: { href: any, text: any }) {
                 isActive
                     ? 'font-semibold'
                     : 'font-normal',
-                'mr-3'
+                'mr-3 rounded-lg hover:ring-2 ring-gray-300'
             )}
         >
             <span>{text}</span>
