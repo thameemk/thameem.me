@@ -10,6 +10,6 @@
 @tailwind utilities;
 
 .text-wrapper{
-    line-height: 29px;
-    font-size: 15px;
+    font-size: 1.15rem;
+    line-height: 1.95rem;
 }
