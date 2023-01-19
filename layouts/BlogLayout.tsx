@@ -11,7 +11,7 @@ import Container from "../components/Container";
 function BlogLayout({children, post}: { post: any, children: any }) {
     return (
         <Container>
-            <h1>post.title</h1>
+            <h1>{post.title}</h1>
         </Container>
     )
 }
