@@ -7,14 +7,13 @@
 
 
 import Container from "../components/Container";
-import ComingSoon from "../components/ComingSoon";
 
-function Blog() {
+function BlogLayout({children, post}: { post: any, children: any }) {
     return (
         <Container>
-            <ComingSoon/>
+            <h1>post.title</h1>
         </Container>
     )
 }
 
-export default Blog
+export default BlogLayout
