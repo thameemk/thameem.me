@@ -5,7 +5,7 @@
  * Modified time : Tue, 17 Jan 2023 at 12:39 am India Standard Time
  */
 
-import constants from "./Constants";
+import constants from "../libs/constants";
 
 function Footer() {
     return (

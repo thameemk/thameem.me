@@ -7,7 +7,7 @@
 
 
 import Image from "next/image";
-import constants from "./Constants";
+import constants from "../libs/constants";
 
 
 function HeaderItem({text, href, company}: { text: any, href: any, company: any }) {

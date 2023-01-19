@@ -1,6 +1,6 @@
 /*
  * Project : thameem.me
- * Filename : Constants.tsx
+ * Filename : constants.tsx
  * Author : thameem
  * Modified time : Tue, 17 Jan 2023 at 12:55 am India Standard Time
  */
