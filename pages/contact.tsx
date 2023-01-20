@@ -9,6 +9,7 @@
 import Container from "../components/Container";
 
 function Contact() {
+
     return (
         <Container title={"Contact - Thameem Karakkoth"}>
             <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
