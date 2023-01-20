@@ -10,7 +10,7 @@ import React from "react";
 import NextLink from "next/link";
 import cn from 'classnames';
 import Image from "next/image";
-import constants from "./Constants";
+import constants from "../libs/constants";
 
 function NavItem({href, text}: { href: any, text: any }) {
     const router = useRouter();
