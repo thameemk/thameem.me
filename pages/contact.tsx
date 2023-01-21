@@ -12,7 +12,8 @@ import React, {useRef, useState} from "react";
 
 export function ErrorMessage() {
     return (
-        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mt-2 mb-2"
+        <div id={"error_message"}
+             className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mt-2 mb-2"
              role="alert">
             <strong className="font-bold">Error! </strong>
             <span className="block sm:inline">Some error has occurred.</span>
@@ -31,7 +32,8 @@ export function ErrorMessage() {
 
 export function SuccessMessage() {
     return (
-        <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mt-2 mb-2"
+        <div id={"success_message"}
+             className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mt-2 mb-2"
              role="alert">
             <strong className="font-bold">Success! </strong>
             <span className="block sm:inline">Your message has sent successfully.</span>
@@ -53,6 +55,8 @@ function Contact() {
     const formRef = useRef<any | null>(null)
     const scriptUrl: any = process.env.NEXT_PUBLIC_GOOGLE_APP_SCRIPT_WEB_APP_URL;
     const [loading, setLoading] = useState(false)
+    const [success, setSuccess] = useState(false)
+    const [error, setError] = useState(false)
 
     const saveToSheet = (event: any) => {
 
@@ -66,10 +70,10 @@ function Contact() {
 
         }).then(response => {
             if (response.status == 200) {
-                console.log("success")
                 setLoading(false)
+                setSuccess(true)
             } else {
-                console.log(response.status)
+                setError(true)
             }
         })
             .catch(err => console.log(err))
@@ -83,7 +87,8 @@ function Contact() {
                 <p className="mb-8 lg:mb-16 font-light text-center text-gray-500  sm:text-xl">
                     share your thoughts anonymously
                 </p>
-                <span id={"response-message"}></span>
+                {success ? <SuccessMessage/> : null}
+                {error ? <ErrorMessage/> : null}
                 <form ref={formRef} onSubmit={saveToSheet} name="contact_form" className="space-y-8">
                     <div>
                         <label htmlFor="subject"
