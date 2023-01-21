@@ -83,8 +83,7 @@ function Contact() {
                 <p className="mb-8 lg:mb-16 font-light text-center text-gray-500  sm:text-xl">
                     share your thoughts anonymously
                 </p>
-                <ErrorMessage/>
-                <SuccessMessage/>
+                <span id={"response-message"}></span>
                 <form ref={formRef} onSubmit={saveToSheet} name="contact_form" className="space-y-8">
                     <div>
                         <label htmlFor="subject"
