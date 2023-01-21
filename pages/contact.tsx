@@ -13,7 +13,7 @@ import React, {useRef} from "react";
 function Contact() {
 
     const formRef = useRef<any | null>(null)
-    const scriptUrl: any = process.env.GOOGLE_APP_SCRIPT_WEB_APP_URL;
+    const scriptUrl: any = process.env.NEXT_PUBLIC_GOOGLE_APP_SCRIPT_WEB_APP_URL;
 
     const saveToSheet = (event: any) => {
 
