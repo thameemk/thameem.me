@@ -7,26 +7,32 @@
 
 
 import Container from "../components/Container";
-import React, {useRef} from "react";
+import React, {useRef, useState} from "react";
 
 
 function Contact() {
 
     const formRef = useRef<any | null>(null)
     const scriptUrl: any = process.env.NEXT_PUBLIC_GOOGLE_APP_SCRIPT_WEB_APP_URL;
+    const [loading, setLoading] = useState(false)
 
     const saveToSheet = (event: any) => {
 
         event.preventDefault();
+        setLoading(true)
 
 
         fetch(scriptUrl, {
             method: 'POST',
             body: new FormData(formRef.current),
 
-        }).then(res => {
-            console.log(res)
-            console.log("success")
+        }).then(response => {
+            if (response.status == 200) {
+                console.log("success")
+                setLoading(false)
+            } else {
+                console.log(response.status)
+            }
         })
             .catch(err => console.log(err))
 
@@ -58,10 +64,10 @@ function Contact() {
                                   className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500"
                                   placeholder="Leave a comment..."></textarea>
                     </div>
-                    <button type="submit"
-                            className="bg-blue-800 text-white py-3 px-5 text-sm font-medium text-center rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300">Send
-                        message
-                    </button>
+                    <input type="submit"
+                            value={loading ? "Sending..." : "Send message"}
+                            className="bg-blue-800 text-white py-3 px-5 text-sm font-medium text-center rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300">
+                    </input>
                 </form>
             </div>
         </Container>
