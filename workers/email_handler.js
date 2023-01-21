@@ -12,8 +12,11 @@ export default {
             const {pathname} = new URL(request.url);
 
             if (pathname.startsWith("/contact_thameem_me")) {
+
+                const request_body = await request.json();
+
                 const data = {
-                    status: 'ok',
+                    subject: request_body.subject, message: request_body.message,
                 };
 
                 const json = JSON.stringify(data, null, 2);
@@ -23,9 +26,9 @@ export default {
                     },
                 });
 
-            } else {
-                return fetch("https://welcome.developers.workers.dev");
             }
+            return fetch("https://welcome.developers.workers.dev");
+
         } catch (e) {
             let err;
             return new Response(err.stack, {status: 500})
