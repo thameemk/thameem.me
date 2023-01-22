@@ -62,17 +62,7 @@ function Contact() {
         event.preventDefault();
         setLoading(true)
 
-        const target = event.target as typeof event.target & {
-            subject: { value: string };
-            message: { value: string };
-        };
-
-        // const data = new FormData(formRef.current)
-
-        const data: any = {
-            subject: target.subject.value,
-            message: target.message.value
-        }
+        const data = new FormData(formRef.current)
 
         fetch('/api/send_email', {
             method: 'POST',

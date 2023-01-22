@@ -7,7 +7,6 @@
 
 
 import type {NextApiRequest, NextApiResponse} from 'next'
-import {useRef} from "react";
 
 type Data = {
     success: boolean
