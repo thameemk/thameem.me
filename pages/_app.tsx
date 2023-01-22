@@ -8,10 +8,19 @@
 import '../styles/global.css'
 import type {AppProps} from 'next/app'
 import Script from "next/script";
+import React from "react";
+import {GoogleReCaptchaProvider} from "react-google-recaptcha-v3";
 
 export default function App({Component, pageProps}: AppProps) {
     return (
-        <>
+        <GoogleReCaptchaProvider
+            reCaptchaKey={"reCaptchaKey"}
+            scriptProps={{
+                async: false,
+                defer: false,
+                appendTo: "head",
+                nonce: undefined,
+            }}>
             <Script async src="https://www.googletagmanager.com/gtag/js?id=G-BFR3PPNSB4"></Script>
             <Script id="google-analytics">
                 {`
@@ -22,6 +31,6 @@ export default function App({Component, pageProps}: AppProps) {
                 `}
             </Script>
             <Component {...pageProps} />
-        </>
+        </GoogleReCaptchaProvider>
     )
 }
