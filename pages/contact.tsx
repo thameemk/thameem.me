@@ -53,7 +53,6 @@ export function SuccessMessage() {
 function Contact() {
 
     const formRef = useRef<any | null>(null)
-    const scriptUrl: any = process.env.NEXT_PUBLIC_GOOGLE_APP_SCRIPT_WEB_APP_URL;
     const [loading, setLoading] = useState(false)
     const [success, setSuccess] = useState(false)
     const [error, setError] = useState(false)
@@ -63,20 +62,29 @@ function Contact() {
         event.preventDefault();
         setLoading(true)
 
+        const target = event.target as typeof event.target & {
+            subject: { value: string };
+            message: { value: string };
+        };
 
-        fetch(scriptUrl, {
+        // const data = new FormData(formRef.current)
+
+        const data: any = {
+            subject: target.subject.value,
+            message: target.message.value
+        }
+
+        fetch('/api/send_email', {
             method: 'POST',
-            body: new FormData(formRef.current),
-
+            body: data
         }).then(response => {
             if (response.status == 200) {
-                setLoading(false)
                 setSuccess(true)
             } else {
                 setError(true)
             }
-        })
-            .catch(err => console.log(err))
+            setLoading(false)
+        }).catch(err => console.log(err))
 
     }
 
