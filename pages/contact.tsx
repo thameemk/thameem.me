@@ -22,6 +22,20 @@ function Contact() {
         setError(false)
     }
 
+
+    function onResponseShowMessage(success: boolean, message: string) {
+        if (success) {
+            setSuccess(true)
+            setError(false)
+        } else {
+            setSuccess(false)
+            setError(true)
+        }
+
+        setLoading(false)
+
+    }
+
     const saveToSheet = (event: any) => {
 
         event.preventDefault();
@@ -43,13 +57,13 @@ function Contact() {
             },
         }).then(response => {
             if (response.status == 200) {
-                setSuccess(true)
+                onResponseShowMessage(true, 'success')
             } else {
-                setError(true)
+                onResponseShowMessage(false, 'error')
             }
-            setLoading(false)
-        }).catch(err => console.log(err))
-
+        }).catch(
+            err => onResponseShowMessage(false, err)
+        )
     }
 
     return (
