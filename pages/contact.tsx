@@ -7,7 +7,7 @@
 
 
 import Container from "../components/Container";
-import React, {useRef, useState} from "react";
+import React, {useState} from "react";
 
 
 export function ErrorMessage() {
@@ -52,7 +52,6 @@ export function SuccessMessage() {
 
 function Contact() {
 
-    const formRef = useRef<any | null>(null)
     const [loading, setLoading] = useState(false)
     const [success, setSuccess] = useState(false)
     const [error, setError] = useState(false)
@@ -62,11 +61,20 @@ function Contact() {
         event.preventDefault();
         setLoading(true)
 
-        const data = new FormData(formRef.current)
+        const target = event.target as typeof event.target & {
+            subject: { value: string };
+            message: { value: string };
+        };
 
         fetch('/api/send_email', {
             method: 'POST',
-            body: data
+            body: JSON.stringify({
+                subject: target.subject.value,
+                message: target.message.value
+            }),
+            headers: {
+                "Content-Type": "application/json",
+            },
         }).then(response => {
             if (response.status == 200) {
                 setSuccess(true)
@@ -87,7 +95,7 @@ function Contact() {
                 </p>
                 {success ? <SuccessMessage/> : null}
                 {error ? <ErrorMessage/> : null}
-                <form ref={formRef} onSubmit={saveToSheet} name="contact_form" className="space-y-8">
+                <form onSubmit={saveToSheet} name="contact_form" className="space-y-8">
                     <div>
                         <label htmlFor="subject"
                                className="block mb-2 text-sm font-medium text-gray-900">Subject</label>
