@@ -16,11 +16,17 @@ export default function handler(
     req: NextApiRequest,
     res: NextApiResponse<Data>
 ) {
+
     const scriptUrl: any = process.env.GOOGLE_APP_SCRIPT_WEB_APP_URL;
+
+    const data = new FormData()
+    data.append("subject", req.body.subject);
+    data.append("message", req.body.message);
+
 
     fetch(scriptUrl, {
         method: 'POST',
-        body: req.body,
+        body: data,
 
     }).then(response => {
             if (response.status == 200) {
