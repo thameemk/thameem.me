@@ -20,10 +20,12 @@ export default function handler(
 
     if (req.method !== 'POST') {
         res.status(405).send({success: false, message: 'Only POST requests allowed'})
+        return
     }
 
     if (!req.body.message || !req.body.subject) {
         res.status(400).json({success: false, message: 'Fill all fields'})
+        return
     }
 
     const scriptUrl: any = process.env.GOOGLE_APP_SCRIPT_WEB_APP_URL;
