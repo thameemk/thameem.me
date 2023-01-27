@@ -21,20 +21,14 @@ function Alerts({
                 }: { action: any, title: string, subtitle: string, alert_type: AlertType }) {
 
 
-    const alert_color = () => {
-        switch (alert_type) {
-            case AlertType.error:
-                return "red"
-            case AlertType.success:
-                return "green"
-        }
-    }
+    let alert_div_class = alert_type === 1 ? 'text-green-700 bg-green-100 border-green-400 border px-4 py-3 rounded relative mt-2 mb-2' : 'text-red-700 bg-red-100 border-red-400 border px-4 py-3 rounded relative mt-2 mb-2'
 
+    let alert_close_button_class = alert_type === 1 ? 'text-green-500' : 'text-red-500'
 
     return (
 
         <div
-            className={`bg-${alert_color()}-100 border border-${alert_color()}-400 text-${alert_color()}-700 px-4 py-3 rounded relative mt-2 mb-2`}
+            className={`${alert_div_class} border px-4 py-3 rounded relative mt-2 mb-2`}
             role="alert"
         >
             <strong className="font-bold">{title}</strong>
@@ -44,7 +38,7 @@ function Alerts({
                 className="absolute top-0 bottom-0 right-0 px-4 py-3"
             >
                 <svg
-                    className={`fill-current h-6 w-6 text-${alert_color}-500`}
+                    className={`${alert_close_button_class} fill-current h-6 w-6 `}
                     role="button"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
@@ -55,6 +49,7 @@ function Alerts({
                 </svg>
             </button>
         </div>
+
     );
 }
 
