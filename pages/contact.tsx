@@ -53,18 +53,9 @@ function Contact() {
             },
         })
             .then((response) => {
-                // response.json().then((data) => {
-                //     console.log(data);
-                // })
-                if (response.status == 200) {
-                    onResponseShowMessage(true, "Your message has  successfully.");
-                } else if (response.status == 400) {
-                    onResponseShowMessage(false, "Fill all fields.");
-                } else if (response.status == 405) {
-                    onResponseShowMessage(false, "Only POST requests allowed.");
-                } else {
-                    onResponseShowMessage(false, "Some error has occurred.");
-                }
+                response.json().then((data) => {
+                    onResponseShowMessage(data.success, data.message)
+                })
             })
             .catch((err) => onResponseShowMessage(false, err));
     };
