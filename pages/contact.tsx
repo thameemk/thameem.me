@@ -11,25 +11,26 @@ import Alerts, {AlertType} from "../components/Alerts";
 
 function Contact() {
     const [loading, setLoading] = useState(false);
-    const [success, setSuccess] = useState(false);
-    const [error, setError] = useState(false);
     const [message, setMessage] = useState("");
+    const [messageType, setMessageType] = useState(AlertType.error);
+    const [messageTitle, setMessageTitle] = useState("");
+    const [alert, setAlert] = useState(false);
 
     const clearResponse = (event: any) => {
         event.preventDefault();
-        setSuccess(false);
-        setError(false);
+        setAlert(false);
     };
 
     function onResponseShowMessage(success: boolean, message: string) {
         setMessage(message);
         if (success) {
-            setSuccess(true);
-            setError(false);
+            setMessageType(AlertType.success)
+            setMessageTitle("Success! ")
         } else {
-            setSuccess(false);
-            setError(true);
+            setMessageType(AlertType.error)
+            setMessageTitle("Error! ")
         }
+        setAlert(true);
         setLoading(false);
     }
 
@@ -70,23 +71,15 @@ function Contact() {
                     share your thoughts anonymously 👋👋
                 </p>
 
-                {error && (
+                {alert && (
                     <Alerts
                         action={clearResponse}
-                        title="Error! "
+                        title={messageTitle}
                         subtitle={message}
-                        alert_type={AlertType.error}
+                        alert_type={messageType}
                     />
                 )}
 
-                {success && (
-                    <Alerts
-                        action={clearResponse}
-                        title="Success! "
-                        subtitle={message}
-                        alert_type={AlertType.success}
-                    />
-                )}
                 <form onSubmit={saveToSheet} name="contact_form" className="space-y-8">
                     <div>
                         <label
