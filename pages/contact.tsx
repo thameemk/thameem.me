@@ -9,11 +9,11 @@ import Container from "../components/Container";
 import React, {useState} from "react";
 import Alerts, {AlertType} from "../components/Alerts";
 
-
 function Contact() {
     const [loading, setLoading] = useState(false);
     const [success, setSuccess] = useState(false);
     const [error, setError] = useState(false);
+    const [message, setMessage] = useState("");
 
     const clearResponse = (event: any) => {
         event.preventDefault();
@@ -22,6 +22,7 @@ function Contact() {
     };
 
     function onResponseShowMessage(success: boolean, message: string) {
+        setMessage(message);
         if (success) {
             setSuccess(true);
             setError(false);
@@ -29,7 +30,6 @@ function Contact() {
             setSuccess(false);
             setError(true);
         }
-
         setLoading(false);
     }
 
@@ -53,10 +53,17 @@ function Contact() {
             },
         })
             .then((response) => {
+                // response.json().then((data) => {
+                //     console.log(data);
+                // })
                 if (response.status == 200) {
-                    onResponseShowMessage(true, "success");
+                    onResponseShowMessage(true, "Your message has  successfully.");
+                } else if (response.status == 400) {
+                    onResponseShowMessage(false, "Fill all fields.");
+                } else if (response.status == 405) {
+                    onResponseShowMessage(false, "Only POST requests allowed.");
                 } else {
-                    onResponseShowMessage(false, "error");
+                    onResponseShowMessage(false, "Some error has occurred.");
                 }
             })
             .catch((err) => onResponseShowMessage(false, err));
@@ -76,7 +83,7 @@ function Contact() {
                     <Alerts
                         action={clearResponse}
                         title="Error! "
-                        subtitle="Some error has occurred."
+                        subtitle={message}
                         alert_type={AlertType.error}
                     />
                 )}
@@ -85,7 +92,7 @@ function Contact() {
                     <Alerts
                         action={clearResponse}
                         title="Success! "
-                        subtitle="Your message has sent successfully."
+                        subtitle={message}
                         alert_type={AlertType.success}
                     />
                 )}
