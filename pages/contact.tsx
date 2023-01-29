@@ -8,6 +8,7 @@
 import Container from "../components/Container";
 import React, {useState} from "react";
 import Alerts, {AlertType} from "../components/Alerts";
+import {useGoogleReCaptcha} from "react-google-recaptcha-v3";
 
 function Contact() {
     const [loading, setLoading] = useState(false);
@@ -15,6 +16,7 @@ function Contact() {
     const [messageType, setMessageType] = useState(AlertType.error);
     const [messageTitle, setMessageTitle] = useState("");
     const [alert, setAlert] = useState(false);
+    const {executeRecaptcha} = useGoogleReCaptcha();
 
     const clearResponse = (event: any) => {
         event.preventDefault();
@@ -34,7 +36,8 @@ function Contact() {
         setLoading(false);
     }
 
-    const saveToSheet = (event: any) => {
+
+    const submitContactForm = (event: any) => {
         event.preventDefault();
         setLoading(true);
 
@@ -43,22 +46,35 @@ function Contact() {
             message: { value: string };
         };
 
-        fetch("/api/send_email", {
-            method: "POST",
-            body: JSON.stringify({
-                subject: target.subject.value,
-                message: target.message.value,
-            }),
-            headers: {
-                "Content-Type": "application/json",
-            },
-        })
-            .then((response) => {
-                response.json().then((data) => {
-                    onResponseShowMessage(data.success, data.message)
-                })
+        if (!executeRecaptcha) {
+            onResponseShowMessage(false, "Failed to retrieve recaptcha token.")
+            return;
+        }
+        executeRecaptcha().then((token) => {
+            if (!token) {
+                onResponseShowMessage(false, "Failed to retrieve recaptcha token.");
+                return;
+            }
+
+            fetch("/api/send_email", {
+                method: "POST",
+                body: JSON.stringify({
+                    subject: target.subject.value,
+                    message: target.message.value,
+                }),
+                headers: {
+                    "Content-Type": "application/json",
+                    "recaptchaToken": token
+                },
             })
-            .catch((err) => onResponseShowMessage(false, err));
+                .then((response) => {
+                    response.json().then((data) => {
+                        onResponseShowMessage(data.success, data.message)
+                    })
+                })
+                .catch((err) => onResponseShowMessage(false, err));
+
+        })
     };
 
     return (
@@ -80,7 +96,7 @@ function Contact() {
                     />
                 )}
 
-                <form onSubmit={saveToSheet} name="contact_form" className="space-y-8">
+                <form onSubmit={submitContactForm} name="contact_form" className="space-y-8">
                     <div>
                         <label
                             htmlFor="subject"
