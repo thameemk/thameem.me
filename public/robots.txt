@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://thameem.me/sitemap.xml
