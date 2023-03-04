@@ -12,6 +12,7 @@ const constants = {
     instagram: "https://www.instagram.com/k__thameem/",
     twitter: "https://twitter.com/k__thameem",
     facebook: "https://www.facebook.com/thameem.karakkoth/",
+    medium: "https://medium.com/@thameem_k",
 }
 
 export default constants
