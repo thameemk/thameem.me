@@ -9,7 +9,7 @@
 const constants = {
     linkedin: "https://www.linkedin.com/in/thameem-karakkoth/",
     github: "https://github.com/thameemk612/",
-    instagram: "https://instagram.com/thameemk612/"
+    instagram: "https://www.instagram.com/k__thameem/"
 }
 
 export default constants
