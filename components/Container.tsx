@@ -15,7 +15,7 @@ function Container(props: any) {
     const meta = {
         title: "Thameem Karakkoth",
         description: "Backend Engineer, Cyber Security Enthusiast",
-        keywords: "Thameem Karakkoth, thameemk612",
+        keywords: "Thameem Karakkoth, Thameem K, thameemk",
         site_name: "Thameem Karakkoth",
         ...customMeta
     }
