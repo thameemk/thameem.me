@@ -6,10 +6,9 @@
  */
 
 import Container from "../components/Container";
-import React, {useRef, useState} from "react";
+import React, {useState} from "react";
 import Alerts, {AlertType} from "../components/Alerts";
-import Script from "next/script";
-import reCAPTCHA from "react-google-recaptcha";
+import {useGoogleReCaptcha} from "react-google-recaptcha-v3";
 
 function Contact() {
     const [loading, setLoading] = useState(false);
@@ -17,10 +16,7 @@ function Contact() {
     const [messageType, setMessageType] = useState(AlertType.error);
     const [messageTitle, setMessageTitle] = useState("");
     const [alert, setAlert] = useState(false);
-
-    const recaptchaRef = useRef(null)
-    const recaptcha_key: any = process.env.NEXT_PUBLIC_GOOGLE_RECAPTCHA_SITE_KEY
-
+    const {executeRecaptcha} = useGoogleReCaptcha();
 
     const clearResponse = (event: any) => {
         event.preventDefault();
@@ -43,8 +39,6 @@ function Contact() {
 
     const submitContactForm = (event: any) => {
         event.preventDefault();
-        const captchaToken = recaptchaRef.current.execute();
-        recaptchaRef.current.reset();
         setLoading(true);
 
         const target = event.target as typeof event.target & {
@@ -52,35 +46,39 @@ function Contact() {
             message: { value: string };
         };
 
+        if (!executeRecaptcha) {
+            onResponseShowMessage(false, "Failed to retrieve recaptcha token.")
+            return;
+        }
+        executeRecaptcha().then((token) => {
+            if (!token) {
+                onResponseShowMessage(false, "Failed to retrieve recaptcha token.");
+                return;
+            }
 
-        fetch("/api/send_email", {
-            method: "POST",
-            body: JSON.stringify({
-                subject: target.subject.value,
-                message: target.message.value,
-            }),
-            headers: {
-                "Content-Type": "application/json",
-                "recaptchaToken": captchaToken
-            },
-        })
-            .then((response) => {
-                response.json().then((data) => {
-                    onResponseShowMessage(data.success, data.message)
-                })
+            fetch("/api/send_email", {
+                method: "POST",
+                body: JSON.stringify({
+                    subject: target.subject.value,
+                    message: target.message.value,
+                }),
+                headers: {
+                    "Content-Type": "application/json",
+                    "recaptchaToken": token
+                },
             })
-            .catch((err) => onResponseShowMessage(false, err));
+                .then((response) => {
+                    response.json().then((data) => {
+                        onResponseShowMessage(data.success, data.message)
+                    })
+                })
+                .catch((err) => onResponseShowMessage(false, err));
 
-
+        })
     };
 
-
     return (
-
         <Container title={"Contact - Thameem Karakkoth"}>
-            <Script src="https://www.google.com/recaptcha/api.js"></Script>
-
-
             <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
                 <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900">
                     Get in touch
@@ -131,12 +129,6 @@ function Contact() {
                             required
                         ></textarea>
                     </div>
-                    <reCAPTCHA
-                        sitekey={recaptcha_key}
-                        ref={recaptchaRef}
-                        size="invisible"
-                    />
-                    {/*<div className="g-recaptcha" data-sitekey={recaptcha_key}></div>*/}
                     <input
                         type="submit"
                         value={loading ? "Sending..." : "Send message"}
