@@ -8,7 +8,7 @@
 import Container from "../components/Container";
 import React, {useState} from "react";
 import Alerts, {AlertType} from "../components/Alerts";
-import {useGoogleReCaptcha, GoogleReCaptchaProvider} from "react-google-recaptcha-v3";
+import {useGoogleReCaptcha} from "react-google-recaptcha-v3";
 
 function Contact() {
     const [loading, setLoading] = useState(false);
@@ -77,17 +77,7 @@ function Contact() {
         })
     };
 
-    const recaptcha_key: any = process.env.NEXT_PUBLIC_GOOGLE_RECAPTCHA_SITE_KEY
-
     return (
-      <GoogleReCaptchaProvider
-        reCaptchaKey={recaptcha_key}
-        scriptProps={{
-            async: false,
-            defer: false,
-            appendTo: "head",
-            nonce: undefined,
-        }}>
         <Container title={"Contact - Thameem Karakkoth"}>
             <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
                 <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900">
@@ -147,7 +137,6 @@ function Contact() {
                 </form>
             </div>
         </Container>
-       </GoogleReCaptchaProvider>
     );
 }
 
