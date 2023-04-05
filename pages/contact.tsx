@@ -16,7 +16,7 @@ function Contact() {
   const [messageType, setMessageType] = useState(AlertType.error);
   const [messageTitle, setMessageTitle] = useState("");
   const [alert, setAlert] = useState(false);
-  const recaptchaRef = React.createRef();
+  const recaptchaRef: any = React.createRef();
 
   const clearResponse = (event: any) => {
     event.preventDefault();
