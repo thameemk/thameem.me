@@ -40,8 +40,8 @@ const nextConfig = {
             permanent: true,
           },
           {
-            source: '/facebook',
-            destination: 'https://www.facebook.com/thameem.karakkoth/',
+            source: '/linkedin',
+            destination: 'https://www.linkedin.com/in/thameem-karakkoth/',
             permanent: true,
           },
           {
