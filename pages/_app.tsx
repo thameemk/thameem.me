@@ -13,7 +13,7 @@ import React from "react";
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-      <Script type="text/javascript">
+      <Script id="microsoft-clarity" type="text/javascript">
         {`
           (function(c,l,a,r,i,t,y){
               c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
