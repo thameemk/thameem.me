@@ -27,7 +27,13 @@ export async function getServerSideProps({res}: { res: any }) {
             '',
             'about',
             'blog',
-            'contact'
+            'contact',
+            'instagram',
+            'facebook',
+            'github',
+            'twitter',
+            'linkedin',
+            'medium'
         ]
     ];
 
