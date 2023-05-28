@@ -6,31 +6,15 @@
  */
 
 
-import type {NextApiRequest, NextApiResponse} from 'next'
+import type {NextApiRequest, NextApiResponse} from 'next';
+import verifyGoogleRecaptcha from '../../libs/google_recaptcha';
+import EmailResponse from '../../types/email';
 
 
-async function verifyGoogleRecaptcha(recaptchatoken: any) {
-
-    let response = await fetch('https://www.google.com/recaptcha/api/siteverify',
-        {
-            method: 'post',
-            headers: {
-                "Content-Type": "application/x-www-form-urlencoded",
-            },
-            body: `secret=${process.env.GOOGLE_RECAPTCHA_SECRET_KEY}&response=${recaptchatoken}`,
-        })
-    return await response.json()
-}
-
-
-type Data = {
-    success: boolean
-    message: String
-}
 
 export default function handler(
     req: NextApiRequest,
-    res: NextApiResponse<Data>
+    res: NextApiResponse<EmailResponse>
 ) {
 
     if (req.method !== 'POST') {
