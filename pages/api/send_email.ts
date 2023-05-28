@@ -8,16 +8,13 @@
 
 import type {NextApiRequest, NextApiResponse} from 'next';
 import verifyGoogleRecaptcha from '../../libs/google_recaptcha';
+import EmailResponse from '../../types/email';
 
 
-type Data = {
-    success: boolean
-    message: String
-}
 
 export default function handler(
     req: NextApiRequest,
-    res: NextApiResponse<Data>
+    res: NextApiResponse<EmailResponse>
 ) {
 
     if (req.method !== 'POST') {
