@@ -1,5 +1,6 @@
 import sendgrid from '@sendgrid/mail';
 
+sendgrid.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API_KEY as string);
 
 const SendGridMailer = async (subject:string,text:string) => {
   const email = {
