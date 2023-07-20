@@ -51,7 +51,7 @@ function NavBar() {
                     target="_blank"
                     className="w-9 h-9 rounded-lg hover:ring-2 ring-gray-300 float-right"
                 >
-                    <Image width="100" height="100" src="static/images/logo/github-mark.svg" alt="GitHub Logo"/>
+                    <Image width="100" height="100" src={process.env.NEXT_PUBLIC_CLOUDINARY_BASE_URL+"thameem.me/logos/github-mark.svg"} alt="GitHub Logo"/>
 
                 </a>
             </nav>
