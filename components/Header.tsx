@@ -10,6 +10,8 @@ import Image from "next/image";
 import constants from "../libs/constants";
 
 
+
+
 function HeaderItem({text, href, company}: { text: any, href: any, company: any }) {
     return (
         <p className="text-base text-gray-700 mb-2">
@@ -40,7 +42,7 @@ function Header() {
                 </div>
                 <div className="w-[100px] sm:w-[176px] relative mb-4 sm:mb-0">
                     <Image
-                        src="/static/images/self.png"
+                        src={process.env.NEXT_PUBLIC_CLOUDINARY_BASE_URL+"r_1000/thameem.me/thameem.jpg"}
                         width="1540" height="1592" alt="Thameem Karakkoth"
                         className="shadow-lg rounded-full border border-gray-300"/>
                 </div>
