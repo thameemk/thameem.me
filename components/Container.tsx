@@ -33,7 +33,7 @@ function Container(props: any) {
                 <meta property="og:title" content={meta.title}/>
                 <meta property="og:description" content={meta.description}/>
 
-                <link rel="shortcut icon" href="/favicon.png"/>
+                <link rel="shortcut icon" href={process.env.NEXT_PUBLIC_CLOUDINARY_BASE_URL+"thameem.me/logos/favicon.png"}/>
 
             </Head>
             <main className={"mx-auto max-w-3xl py-10 px-10"}>
