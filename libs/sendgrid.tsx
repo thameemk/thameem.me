@@ -11,9 +11,11 @@ const SendGridMailer = async (subject:string,text:string) => {
   };
 
   try {
-    await sendgrid.send(email);
+    await sendgrid.send(email).then((res)=>
+      console.log(res)
+    )
   } catch (error) {
-    throw new Error('Email could not be sent, Please try again later');
+      console.log(error)
   }
 };
 
