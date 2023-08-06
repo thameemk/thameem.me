@@ -9,6 +9,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import verifyGoogleRecaptcha from '../../libs/google_recaptcha';
 import EmailResponse from '../../types/email';
+import SendGridMailer from '../../libs/sendgrid';
 
 
 export default async function handler(
@@ -33,6 +34,8 @@ export default async function handler(
         return
     }
 
+    SendGridMailer(req.body.subject, req.body.message)
+
     const scriptUrl: any = process.env.GOOGLE_APP_SCRIPT_WEB_APP_URL;
 
     const data = new FormData()
@@ -52,7 +55,5 @@ export default async function handler(
         } else {
             res.status(response.status).json({ success: false, message: 'Some error has occurred.' })
         }
-    }
-    )
-
+    })
 }
