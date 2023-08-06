@@ -48,7 +48,7 @@ function Contact() {
     const recaptchaValue = recaptchaRef.current.getValue();
 
     if (!recaptchaValue) {
-      onResponseShowMessage(false, "Failed to retrieve recaptcha token.");
+      onResponseShowMessage(false, "Failed To Retrieve ReCaptcha Token.");
       return;
     }
 
