@@ -6,55 +6,54 @@
  */
 
 
-import type {NextApiRequest, NextApiResponse} from 'next';
+import type { NextApiRequest, NextApiResponse } from 'next';
 import verifyGoogleRecaptcha from '../../libs/google_recaptcha';
 import EmailResponse from '../../types/email';
+import SendGridMailer from '../../libs/sendgrid';
 
 
-
-export default function handler(
+export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse<EmailResponse>
 ) {
 
     if (req.method !== 'POST') {
-        res.status(405).send({success: false, message: 'Only POST requests allowed'})
+        res.status(405).send({ success: false, message: 'Only POST Requests Allowed' })
         return
     }
 
     if (!req.body.message || !req.body.subject) {
-        res.status(400).json({success: false, message: 'Fill all fields'})
+        res.status(400).json({ success: false, message: 'Fill All Fields' })
         return
     }
 
+    let recaptchaResponse = await verifyGoogleRecaptcha(req.headers.recaptchatoken)
 
-    verifyGoogleRecaptcha(req.headers.recaptchatoken).then(recaptchaResponse => {
-        if (recaptchaResponse.success == true) {
-            const scriptUrl: any = process.env.GOOGLE_APP_SCRIPT_WEB_APP_URL;
+    if (recaptchaResponse.success != true) {
+        res.status(200).json({ success: false, message: 'Google ReCaptcha Failure.' })
+        return
+    }
 
-            const data = new FormData()
+    SendGridMailer(req.body.subject, req.body.message)
 
-            data.append("subject", req.body.subject);
-            data.append("message", req.body.message);
+    const scriptUrl: any = process.env.GOOGLE_APP_SCRIPT_WEB_APP_URL;
+
+    const data = new FormData()
+
+    data.append("subject", req.body.subject);
+    data.append("message", req.body.message);
 
 
-            fetch(scriptUrl, {
-                method: 'POST',
-                body: data,
+    fetch(scriptUrl, {
+        method: 'POST',
+        body: data,
 
-            }).then(response => {
-                    if (response.status == 200) {
-                        res.status(200).json({success: true, message: 'Your message has sent successfully'})
+    }).then(response => {
+        if (response.status == 200) {
+            res.status(200).json({ success: true, message: 'Your message has sent successfully' })
 
-                    } else {
-                        res.status(response.status).json({success: false, message: 'Some error has occurred.'})
-                    }
-                }
-            )
         } else {
-            res.status(200).json({success: false, message: 'Google ReCaptcha Failure.'})
+            res.status(response.status).json({ success: false, message: 'Some error has occurred.' })
         }
-    });
-
-
+    })
 }
