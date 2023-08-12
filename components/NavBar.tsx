@@ -41,7 +41,7 @@ function NavBar() {
 
                     <NavItem href="/" text="Home"/>
                     <NavItem href="/about" text="About"/>
-                    <NavItem href="/blog" text="Blog"/>
+                    <NavItem href="/stickies" text="Stickies"/>
                     <NavItem href="/contact" text="Contact"/>
                 </div>
 
