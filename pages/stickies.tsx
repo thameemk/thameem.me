@@ -13,9 +13,20 @@ function Stickies() {
         </p>
 
         <DefaultCard
-          url="https://thameem.me"
-          title="Noteworthy technology acquisitions 2021"
-          descrption="Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order."
+          url="https://ep2023.europython.eu/session/pygoat-learn-django-security-the-hard-way"
+          title="Pygoat - Learn Django security the hard way"
+          descrption="Excited to have been a speaker at EuroPython 2023 alongside{' '}
+          <a className='text-sky-600' target='_blank' href='https://adarshd.dev/'>
+            Adarsh Divakaran
+          </a>{' '}
+          🎤. We had the wonderful opportunity to discuss Pygoat - Learn Django
+          security the hard way and share our insights with the Python
+          community.
+          <br />
+          <br />
+          <a className='text-sky-600' href={url} target='_blank'>
+            Read More &rarr;
+          </a>{' '}"
         />
       </div>
     </Container>
