@@ -9,7 +9,7 @@ function EuroPython() {
           Excited to have been a speaker at EuroPython 2023 alongside{" "}
           <a
             className="text-sky-600"
-            target="_blank"
+            target="_blank" rel="noreferrer"
             href="https://adarshd.dev/"
           >
             Adarsh Divakaran
@@ -24,7 +24,7 @@ function EuroPython() {
             href={
               "https://ep2023.europython.eu/session/pygoat-learn-django-security-the-hard-way"
             }
-            target="_blank"
+            target="_blank" rel="noreferrer"
           >
             Read More &rarr;
           </a>{" "}
