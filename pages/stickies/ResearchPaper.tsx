@@ -12,7 +12,7 @@ function ResearchPaper() {
           Authored by
           <a
             className="text-sky-600"
-            target="_blank"
+            target="_blank" rel="noreferrer"
             href="https://www.linkedin.com/in/dr-anzar-s-m-728949b2/"
           >
             {" "}
@@ -21,7 +21,7 @@ function ResearchPaper() {
           ,
           <a
             className="text-sky-600"
-            target="_blank"
+            target="_blank" rel="noreferrer"
             href="https://www.linkedin.com/in/nakul-s-pramod-6ba2041a0/"
           >
             {" "}
@@ -30,7 +30,7 @@ function ResearchPaper() {
           ,
           <a
             className="text-sky-600"
-            target="_blank"
+            target="_blank" rel="noreferrer"
             href="https://www.linkedin.com/in/swathy-mohanlal-b94246198/"
           >
             {" "}
@@ -39,7 +39,7 @@ function ResearchPaper() {
           , and
           <a
             className="text-sky-600"
-            target="_blank"
+            target="_blank" rel="noreferrer"
             href="https://www.linkedin.com/in/sajitha-l-739036182/"
           >
             {" "}
@@ -51,7 +51,7 @@ function ResearchPaper() {
           <a
             className="text-sky-600"
             href={"https://ieeexplore.ieee.org/document/9673634"}
-            target="_blank"
+            target="_blank" rel="noreferrer"
           >
             Read More &rarr;
           </a>{" "}
