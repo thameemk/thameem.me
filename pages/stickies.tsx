@@ -1,5 +1,6 @@
 import Container from "../components/Container";
 import EuroPython from "./stickies/EuroPython";
+import ResearchPaper from "./stickies/ResearchPaper";
 
 function Stickies() {
   return (
@@ -12,8 +13,8 @@ function Stickies() {
           codes, blogs, thoughts, achievements ... ✍️ 🧑‍🎓
         </p>
 
-        <EuroPython/>
-
+        <EuroPython />
+        <ResearchPaper />
       </div>
     </Container>
   );
