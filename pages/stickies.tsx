@@ -1,5 +1,6 @@
 import Container from "../components/Container";
 import EuroPython from "./stickies/EuroPython";
+import MLSA from "./stickies/MLSA";
 import ResearchPaper from "./stickies/ResearchPaper";
 
 function Stickies() {
@@ -15,6 +16,7 @@ function Stickies() {
 
         <EuroPython />
         <ResearchPaper />
+        <MLSA />
       </div>
     </Container>
   );
