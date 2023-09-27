@@ -42,7 +42,7 @@ function Header() {
                 </div>
                 <div className="w-[100px] sm:w-[176px] relative mb-4 sm:mb-0">
                     <Image
-                        src={process.env.NEXT_PUBLIC_CLOUDINARY_BASE_URL+"r_1000/thameem.me/thameem.jpg"}
+                        src={process.env.NEXT_PUBLIC_CLOUDINARY_BASE_URL+"r_1000/v1695806280/thameem.me/v2/thameem.jpg"}
                         width="1540" height="1592" alt="Thameem Karakkoth"
                         className="shadow-lg rounded-full border border-gray-300"/>
                 </div>
