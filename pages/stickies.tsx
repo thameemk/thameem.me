@@ -1,5 +1,6 @@
 import Container from "../components/Container";
 import EuroPython from "./stickies/EuroPython";
+import PyCascades from "./stickies/Pycascades";
 import ResearchPaper from "./stickies/ResearchPaper";
 
 function Stickies() {
@@ -12,7 +13,7 @@ function Stickies() {
         <p className="mb-8 lg:mb-16 font-light text-center text-gray-500  sm:text-xl">
           codes, blogs, thoughts, achievements ... ✍️ 🧑‍🎓
         </p>
-
+        <PyCascades />
         <EuroPython />
         <ResearchPaper />
       </div>
