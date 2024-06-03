@@ -1,6 +1,6 @@
 import Container from "../components/Container";
 import EuroPython from "./stickies/EuroPython";
-import PyCascades from "./stickies/Pycascades";
+import PyCascades from "./stickies/PyCascades";
 import ResearchPaper from "./stickies/ResearchPaper";
 
 function Stickies() {
