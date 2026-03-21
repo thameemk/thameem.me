@@ -8,12 +8,14 @@
 import React from "react";
 import Container from "../components/Container";
 import Header from "../components/Header";
+import Experience from "../components/Experience";
 import Link from "next/link";
 
 export default function Home() {
     return (
         <Container>
             <Header/>
+            <Experience/>
             <div className="border-b border-gray-00 mb-10">
                 <h2 className="font-black text-2xl md:text-4xl mb-3">About</h2>
 
