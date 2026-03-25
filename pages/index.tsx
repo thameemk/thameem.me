@@ -8,29 +8,15 @@
 import React from "react";
 import Container from "../components/Container";
 import Header from "../components/Header";
-import Link from "next/link";
+import Experience from "../components/Experience";
+import HomeAbout from "../components/HomeAbout";
 
 export default function Home() {
     return (
         <Container>
             <Header/>
-            <div className="border-b border-gray-00 mb-10">
-                <h2 className="font-black text-2xl md:text-4xl mb-3">About</h2>
-
-                <p className="text-gray-700 mb-10 text-wrapper">
-                    Hi, I'm Thameem, a passionate developer, currently working as a Product Engineer at UST.
-                    <br/>
-                    I have completed my undergraduate in Electronics and communication engineering from TKM College of
-                    Engineering.
-                    <br/>
-                    I love to work on various modern platforms and learn cutting-edge technologies in software
-                    engineering, design & architecture, cyber security, etc.
-                    <br/><br/>
-                    <Link href="/about">
-                        Continue reading <span className="text-blue-800">→</span>
-                    </Link>
-                </p>
-            </div>
+            <Experience/>
+            <HomeAbout/>
         </Container>
     )
 }

@@ -5,60 +5,54 @@
  * Modified time : Sun, 15 Jan 2023 at 8:54 pm India Standard Time
  */
 
-import {useRouter} from "next/router";
+import { useRouter } from "next/router";
 import React from "react";
 import NextLink from "next/link";
-import cn from 'classnames';
 import Image from "next/image";
 import constants from "../libs/constants";
 
-function NavItem({href, text}: { href: any, text: any }) {
+function NavItem({ href, text }: { href: string; text: string }) {
     const router = useRouter();
     const isActive = router.asPath === href;
 
     return (
         <NextLink
             href={href}
-            className={cn(
+            className={`text-sm px-3 py-1.5 rounded-lg transition-colors ${
                 isActive
-                    ? 'font-semibold'
-                    : 'font-normal',
-                'mr-3 rounded-lg hover:ring-2 ring-gray-300'
-            )}
+                    ? "font-semibold text-gray-900 bg-gray-100"
+                    : "font-normal text-gray-500 hover:text-gray-900 hover:bg-gray-100"
+            }`}
         >
-            <span>{text}</span>
-
+            {text}
         </NextLink>
     );
 }
 
 function NavBar() {
     return (
-        <>
-            <nav className="flex items-center justify-between">
+        <nav className="flex items-center justify-between mb-2">
+            <div className="flex items-center gap-1">
+                <NavItem href="/" text="Home" />
+                <NavItem href="/about" text="About" />
+                <NavItem href="/contact" text="Contact" />
+            </div>
 
-                <div className="float-left">
-
-                    <NavItem href="/" text="Home"/>
-                    <NavItem href="/about" text="About"/>
-                    <NavItem href="/stickies" text="Stickies"/>
-                    <NavItem href="/contact" text="Contact"/>
-                </div>
-
-                <a
-                    href={constants.github}
-                    rel="noreferrer"
-                    target="_blank"
-                    className="w-9 h-9 rounded-lg hover:ring-2 ring-gray-300 float-right"
-                >
-                    <Image width="100" height="100" src={process.env.NEXT_PUBLIC_CLOUDINARY_BASE_URL+"thameem.me/logos/github-mark.svg"} alt="GitHub Logo"/>
-
-                </a>
-            </nav>
-
-        </>
-    )
+            <a
+                href={constants.github}
+                rel="noreferrer"
+                target="_blank"
+                className="w-7 h-7 opacity-60 hover:opacity-100 transition-opacity"
+            >
+                <Image
+                    width="28"
+                    height="28"
+                    src={process.env.NEXT_PUBLIC_CLOUDINARY_BASE_URL + "thameem.me/logos/github-mark.svg"}
+                    alt="GitHub"
+                />
+            </a>
+        </nav>
+    );
 }
 
-export default NavBar
-
+export default NavBar;
