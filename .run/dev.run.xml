@@ -1,19 +1,15 @@
-<!--
-  ~ Project : thameem.me
-  ~ Filename : dev.run.xml
-  ~ Author : thameem
-  ~ Modified time : Sun, 25 Dec 2022 at 10:38 pm India Standard Time
-  -->
-
 <component name="ProjectRunConfigurationManager">
-    <configuration default="false" name="dev" type="js.build_tools.npm" nameIsGenerated="true">
-        <package-json value="$PROJECT_DIR$/package.json"/>
-        <command value="run"/>
-        <scripts>
-            <script value="dev"/>
-        </scripts>
-        <node-interpreter value="project"/>
-        <envs/>
-        <method v="2"/>
-    </configuration>
+  <configuration default="false" name="dev" type="js.build_tools.npm" nameIsGenerated="true">
+    <package-json value="$PROJECT_DIR$/package.json" />
+    <command value="run" />
+    <scripts>
+      <script value="dev" />
+    </scripts>
+    <node-interpreter value="$USER_HOME$/.nvm/versions/node/v24.14.1/bin/node" />
+    <envs />
+    <EXTENSION ID="com.intellij.javascript.debugger.execution.StartBrowserRunConfigurationExtension">
+      <browser with-js-debugger="true" />
+    </EXTENSION>
+    <method v="2" />
+  </configuration>
 </component>

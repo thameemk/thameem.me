@@ -6,10 +6,10 @@
  */
 
 
-import type { NextApiRequest, NextApiResponse } from 'next';
+import type {NextApiRequest, NextApiResponse} from 'next';
 import verifyGoogleRecaptcha from '../../libs/google_recaptcha';
 import EmailResponse from '../../types/email';
-import SendGridMailer from '../../libs/sendgrid';
+import SESMailer from '../../libs/aws_ses';
 
 
 export default async function handler(
@@ -18,23 +18,23 @@ export default async function handler(
 ) {
 
     if (req.method !== 'POST') {
-        res.status(405).send({ success: false, message: 'Only POST Requests Allowed' })
+        res.status(405).send({success: false, message: 'Only POST Requests Allowed'})
         return
     }
 
     if (!req.body.message || !req.body.subject) {
-        res.status(400).json({ success: false, message: 'Fill All Fields' })
+        res.status(400).json({success: false, message: 'Fill All Fields'})
         return
     }
 
     let recaptchaResponse = await verifyGoogleRecaptcha(req.headers.recaptchatoken)
 
     if (recaptchaResponse.success != true) {
-        res.status(200).json({ success: false, message: 'Google ReCaptcha Failure.' })
+        res.status(200).json({success: false, message: 'Google ReCaptcha Failure.'})
         return
     }
 
-    SendGridMailer(req.body.subject, req.body.message)
+    await SESMailer(req.body.subject, req.body.message)
 
     const scriptUrl: any = process.env.GOOGLE_APP_SCRIPT_WEB_APP_URL;
 
@@ -50,10 +50,10 @@ export default async function handler(
 
     }).then(response => {
         if (response.status == 200) {
-            res.status(200).json({ success: true, message: 'Your message has sent successfully' })
+            res.status(200).json({success: true, message: 'Your message has sent successfully'})
 
         } else {
-            res.status(response.status).json({ success: false, message: 'Some error has occurred.' })
+            res.status(response.status).json({success: false, message: 'Some error has occurred.'})
         }
     })
 }
