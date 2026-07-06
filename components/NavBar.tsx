@@ -35,6 +35,14 @@ function NavBar() {
             <div className="flex items-center gap-1">
                 <NavItem href="/" text="Home" />
                 <NavItem href="/about" text="About" />
+                <a
+                    href={process.env.NEXT_PUBLIC_BLOG_URL}
+                    rel="noreferrer"
+                    target="_blank"
+                    className="text-sm px-3 py-1.5 rounded-lg transition-colors font-normal text-gray-500 hover:text-gray-900 hover:bg-gray-100"
+                >
+                    Blog
+                </a>
                 <NavItem href="/contact" text="Contact" />
             </div>
 
