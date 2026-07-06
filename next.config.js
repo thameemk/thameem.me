@@ -52,6 +52,11 @@ const nextConfig = {
             destination: 'https://medium.com/@thameem_k',
             permanent: true,
           },
+          {
+            source: '/blog',
+            destination: process.env.NEXT_PUBLIC_BLOG_URL,
+            permanent: true,
+          },
         ]
     }
 }
